@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Range(0,10)][Tooltip("Speed of the player")] public float speed = 5;
+    [SerializeField] AudioSource audioSource;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +13,22 @@ public class Player : MonoBehaviour
         Vector3 direction = Vector3.zero;
         direction.x = Input.GetAxis("Horizontal");
         direction.z = Input.GetAxis("Vertical");
+
         transform.position += direction * Time.deltaTime * speed;
+        //transform.rotation *= Quaternion.Euler(1, 0, 0);
+        //transform.localScale = new Vector3(2, 2, 2);
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            audioSource.Play();
+            GetComponent<Renderer>().material.color = Color.green;
+            //transform.rotation *= Quaternion.Euler(1, 0, 0);
+        }
+
+        GameObject go = GameObject.Find("Cube");
+        if (go)
+        {
+            go.GetComponent<Renderer>().material.color = Color.cyan;
+        }
     }
 }
