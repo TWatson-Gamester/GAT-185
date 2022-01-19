@@ -74,6 +74,47 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 140894, guid: 867af292a5125e44e86a686d9ea116cd, type: 3}
   m_PrefabInstance: {fileID: 3894677646065945631}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &7902733997398339393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894677646065822273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 5, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1375675804396000070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894677646065822273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf32f5bf8c0ab7489acacafc54f0ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 0}
+  destroyOnDeath: 1
+  maxHealth: 30
+--- !u!114 &5898194272973502392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894677646065822273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158e7f7e4e73ca24db83cbd90a7c62bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
 --- !u!114 &8113916651830605942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,5 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b3c42b321fa2f46b80e947438ae0e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 1}
+  direction: {x: 0, y: 0, z: -1}
   speed: 30
+  space: 0
