@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
     public void Damage(float damage)
     {
         health -= damage;
+        GameManager.Instance.Score += 1;
         if(health <= 0)
         {
             if (deathPrefab != null)
