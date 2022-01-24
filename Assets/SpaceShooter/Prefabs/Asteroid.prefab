@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 7575235154352064775}
   - component: {fileID: 8573320509311661502}
   - component: {fileID: -7503192103919160041}
+  - component: {fileID: -5236979500481440902}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 8071610437317465074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6826137884125934386}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 46.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: -1}
-  speed: 10
+  speed: 30
   space: 0
 --- !u!114 &8573320509311661502
 MonoBehaviour:
@@ -79,6 +80,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &-5236979500481440902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826137884125934386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae69f321256f914793b8f3752f2451a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceWeapon: {fileID: 0}
+  minFireTime: 0
+  maxFireTime: 0
+  points: 25
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 0

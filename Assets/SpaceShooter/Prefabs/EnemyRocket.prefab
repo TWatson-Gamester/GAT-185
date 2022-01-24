@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 6831200901133241123}
   - component: {fileID: 5172216753052924866}
   - component: {fileID: -6254484071398304075}
-  m_Layer: 6
-  m_Name: Rocket
+  m_Layer: 7
+  m_Name: EnemyRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,11 +279,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: m_Name
@@ -291,11 +291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d205bba4d197a5f45a64abfcc6123c20, type: 3}
       propertyPath: m_LocalScale.x
