@@ -14,7 +14,7 @@ public class SpacePlayer : MonoBehaviour, IDestructable
 
         transform.Translate(direction * Time.deltaTime * speed);
 
-        if (Input.GetButtonDown("Fire1") || (Input.GetButton("Fire1")))
+        if (Input.GetButton("Fire1"))
         {
             GetComponent<SpaceWeapon>().Fire();
         }
