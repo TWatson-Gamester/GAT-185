@@ -13,6 +13,8 @@ public class BoxSpawner : MonoBehaviour
     BoxCollider boxCollider;
     float timer;
 
+    public float timeModifier = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class BoxSpawner : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            timer = Random.Range(minTime, maxTime);
+            timer = Random.Range(minTime, maxTime) * timeModifier;
 
             Instantiate(spawnPrefabs[Random.Range(0, spawnPrefabs.Length)], GetRandomPointInBoxCollider(), transform.rotation);
         }

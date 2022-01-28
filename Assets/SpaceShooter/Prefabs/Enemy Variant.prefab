@@ -203,7 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6831200901133241124, guid: c92449720603e6c4cbd2759ff915ac2c, type: 3}
-  spawnTransform: {fileID: 5592135151013052004}
+  spawnTransforms:
+  - {fileID: 5592135151013052004}
   fireRate: 0
 --- !u!114 &1375675804396000070
 MonoBehaviour:
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf32f5bf8c0ab7489acacafc54f0ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 0}
+  deathPrefab: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
   destroyOnDeath: 1
   maxHealth: 30
 --- !u!114 &5898194272973502392
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158e7f7e4e73ca24db83cbd90a7c62bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 30
 --- !u!114 &8113916651830605942
 MonoBehaviour:
   m_ObjectHideFlags: 0
