@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074695149360113425}
   - component: {fileID: 2074695149360113430}
+  - component: {fileID: -8976228361636637322}
   - component: {fileID: 2074695149360113431}
   - component: {fileID: 2074695149360113428}
   - component: {fileID: 2074695149360113429}
@@ -51,6 +52,19 @@ MonoBehaviour:
   jumpForce: 5
   forceMode: 0
   viewTransform: {fileID: 0}
+--- !u!114 &-8976228361636637322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074695149360113418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a695df30b20ff469803745cad9a319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!33 &2074695149360113431
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class BallGameManager : Singleton<BallGameManager>
         set
         {
             score = value;
-            scoreUI.text = score.ToString();
+            scoreUI.text = score.ToString("D2");
         }
     }
 
