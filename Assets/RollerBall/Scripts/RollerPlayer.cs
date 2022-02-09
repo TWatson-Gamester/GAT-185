@@ -35,6 +35,8 @@ public class RollerPlayer : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
+        BallGameManager.Instance.playerHealth = GetComponent<Health>().health;
     }
 
     private void FixedUpdate()
