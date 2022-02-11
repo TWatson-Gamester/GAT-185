@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject deathPrefab;
     [SerializeField] bool destroyOnDeath = true;
     [SerializeField] float maxHealth = 100;
+    [SerializeField] bool DestroyRoot = false;
 
     public float health { get; set; }
 
@@ -32,7 +33,8 @@ public class Health : MonoBehaviour
             }
             if (destroyOnDeath)
             {
-                Destroy(gameObject);
+                if (DestroyRoot) Destroy(gameObject.transform.root.gameObject);
+                else Destroy(gameObject);
             }
         }
     }

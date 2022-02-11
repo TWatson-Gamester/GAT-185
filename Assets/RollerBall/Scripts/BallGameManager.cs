@@ -18,10 +18,12 @@ public class BallGameManager : Singleton<BallGameManager>
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform playerSpawn;
+    [SerializeField] GameObject mainCamera;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject gameoverScreen;
     [SerializeField] TMP_Text scoreUI;
     [SerializeField] TMP_Text livesUI;
+    [SerializeField] TMP_Text timeUI;
     [SerializeField] Slider healthBarUI;
 
     public float playerHealth { set { healthBarUI.value = value; } }
@@ -35,7 +37,7 @@ public class BallGameManager : Singleton<BallGameManager>
     int lives = 3;
     State state = State.TITLE;
     float stateTimer;
-    float gameTimer = 0;
+    float gameTime = 0;
 
     public int Score
     {
@@ -57,6 +59,16 @@ public class BallGameManager : Singleton<BallGameManager>
         }
     }
 
+    public float GameTime
+    {
+        get { return gameTime; }
+        set
+        {
+            gameTime = value;
+            timeUI.text = "<mspace=mspace=36>" + gameTime.ToString("0.0");
+        }
+    }
+
     private void Update()
     {
         stateTimer -= Time.deltaTime;
@@ -66,15 +78,20 @@ public class BallGameManager : Singleton<BallGameManager>
             case State.TITLE:
                 break;
             case State.PLAYER_START:
-                //Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
+                Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
                 startGameEvent?.Invoke();
+                mainCamera.SetActive(false);
+                GameTime = 60;
+
                 state = State.GAME;
                 break;
             case State.GAME:
-                gameTimer += Time.deltaTime;
-                if (gameTimer >= 8)
+                GameTime -= Time.deltaTime;
+                if (gameTime <= 0)
                 {
-                    gameTimer = 0;
+                    GameTime = 0;
+                    state = State.GAME_OVER;
+                    stateTimer = 5;
                 }
                 break;
             case State.PLAYER_DEAD:
@@ -102,14 +119,15 @@ public class BallGameManager : Singleton<BallGameManager>
         state = State.PLAYER_START;
         Score = 0;
         Lives = 3;
-        gameTimer = 0;
+        gameTime = 0;
         titleScreen.SetActive(false);
     }
 
     public void OnPlayerDead()
     {
+        mainCamera.SetActive(true);
         Lives -= 1;
-        if(lives == 0)
+        if(lives <= 0)
         {
             state = State.GAME_OVER;
             stateTimer = 5;
