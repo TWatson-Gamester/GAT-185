@@ -12,6 +12,7 @@ public class BallGameManager : Singleton<BallGameManager>
         PLAYER_START,
         GAME,
         PLAYER_DEAD,
+        PLAYER_WINS,
         GAME_OVER
 
     }
@@ -21,6 +22,8 @@ public class BallGameManager : Singleton<BallGameManager>
     [SerializeField] GameObject mainCamera;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject gameoverScreen;
+    [SerializeField] GameObject playerWinsScreen;
+    [SerializeField] GameObject[] collectibles;
     [SerializeField] TMP_Text scoreUI;
     [SerializeField] TMP_Text livesUI;
     [SerializeField] TMP_Text timeUI;
@@ -81,8 +84,6 @@ public class BallGameManager : Singleton<BallGameManager>
                 Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
                 startGameEvent?.Invoke();
                 mainCamera.SetActive(false);
-                GameTime = 60;
-
                 state = State.GAME;
                 break;
             case State.GAME:
@@ -93,6 +94,13 @@ public class BallGameManager : Singleton<BallGameManager>
                     state = State.GAME_OVER;
                     stateTimer = 5;
                 }
+                if (score == 12)
+                {
+                    state = State.PLAYER_WINS;
+                    stateTimer = 4;
+                    GameTime = 0;
+                    
+                }
                 break;
             case State.PLAYER_DEAD:
                 if(stateTimer <= 0)
@@ -100,12 +108,22 @@ public class BallGameManager : Singleton<BallGameManager>
                     state = State.PLAYER_START;
                 }
                 break;
+            case State.PLAYER_WINS:
+                playerWinsScreen.SetActive(true);
+                if(stateTimer <= 0)
+                {
+/*                    var player = FindObjectOfType<RollerPlayer>();
+                    Destroy(player.gameObject);*/
+                    state = State.GAME_OVER;
+                }
+                break;
             case State.GAME_OVER:
                 if (stateTimer <= 0)
                 {
+                    DestroyPickUps();
+                    playerWinsScreen.SetActive(false);
                     gameoverScreen.SetActive(false);
                     titleScreen.SetActive(true);
-                    DestroyAllEnemies();
                     state = State.TITLE;
                 }
                 break;
@@ -119,7 +137,11 @@ public class BallGameManager : Singleton<BallGameManager>
         state = State.PLAYER_START;
         Score = 0;
         Lives = 3;
-        gameTime = 0;
+        foreach (GameObject pickup in collectibles)
+        {
+            Instantiate(pickup, pickup.transform.position, pickup.transform.rotation);
+        }
+        GameTime = 60;
         titleScreen.SetActive(false);
     }
 
@@ -142,16 +164,6 @@ public class BallGameManager : Singleton<BallGameManager>
         stopGameEvent?.Invoke();
     }
 
-    private void DestroyAllEnemies()
-    {
-        // destroy all enemies
-/*        var spaceEnemies = FindObjectsOfType<SpaceEnemy>();
-        foreach (var spaceEnemy in spaceEnemies)
-        {
-            Destroy(spaceEnemy.gameObject);
-        }*/
-    }
-
     public void OnStartTitle()
     {
         state = State.TITLE;
@@ -159,4 +171,12 @@ public class BallGameManager : Singleton<BallGameManager>
         stopGameEvent?.Invoke();
     }
 
+    public void DestroyPickUps()
+    {
+        Pickup[] destroyPickups = FindObjectsOfType<Pickup>();
+        foreach(Pickup pickup in destroyPickups)
+        {
+            Destroy(pickup.gameObject);
+        }
+    }
 }

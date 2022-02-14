@@ -49,6 +49,7 @@ MonoBehaviour:
   amplitude: 0.05
   rate: 8
   spinRate: 180
+  points: 1
 --- !u!114 &-4935096811015457333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,9 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904005ade39fc1844bb775be427131c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 0}
+  deathPrefab: {fileID: 2643214943186822118, guid: 881e1e6bba2217845911252383ce1d62, type: 3}
   destroyOnDeath: 1
   maxHealth: 1
+  DestroyRoot: 0
 --- !u!135 &327042401081637919
 SphereCollider:
   m_ObjectHideFlags: 0
