@@ -58,7 +58,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.3274578
+        functionName: LeftFootSpawn
+        data: 
+        objectReferenceParameter: {fileID: 3304129915820368580, guid: 13f66faa83b77b847bd670ed89eec791, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8193028
+        functionName: RightFootSpawn
+        data: 
+        objectReferenceParameter: {fileID: 3304129915820368580, guid: 13f66faa83b77b847bd670ed89eec791, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
