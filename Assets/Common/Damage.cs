@@ -27,4 +27,14 @@ public class Damage : MonoBehaviour
             outHealth.Damage(damage * Time.deltaTime);
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (!oneTime) return;
+
+        if (other.gameObject.TryGetComponent<Health>(out Health outHealth))
+        {
+            outHealth.Damage(damage);
+        }
+    }
 }
