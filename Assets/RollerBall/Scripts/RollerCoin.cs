@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RollerCoin : Pickup, IDestructable
+public class RollerCoin : RollerPickup, IDestructable
 {
     [SerializeField] int points;
     public void Destroyed()

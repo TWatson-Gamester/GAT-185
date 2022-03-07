@@ -173,8 +173,8 @@ public class BallGameManager : Singleton<BallGameManager>
 
     public void DestroyPickUps()
     {
-        Pickup[] destroyPickups = FindObjectsOfType<Pickup>();
-        foreach(Pickup pickup in destroyPickups)
+        RollerPickup[] destroyPickups = FindObjectsOfType<RollerPickup>();
+        foreach(RollerPickup pickup in destroyPickups)
         {
             Destroy(pickup.gameObject);
         }

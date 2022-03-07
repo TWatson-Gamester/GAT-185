@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RollerHealthPickup : Pickup, IDestructable
+public class RollerHealthPickup : RollerPickup, IDestructable
 {
     [SerializeField] float health;
     public void Destroyed()

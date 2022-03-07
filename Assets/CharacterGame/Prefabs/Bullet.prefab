@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5122727455062679672}
   - component: {fileID: -3242235768561017731}
   - component: {fileID: 5122727455062679677}
+  - component: {fileID: -3713329310333129565}
   - component: {fileID: 5122727455062679673}
   - component: {fileID: 5122727455062679674}
   - component: {fileID: 5122727455062679675}
@@ -118,6 +119,19 @@ MonoBehaviour:
   forceMode: 2
   timer: 0
   destroyPrefab: {fileID: 867883902555630986, guid: 493298f9ccb424b4587ce97361e7b48b, type: 3}
+--- !u!114 &-3713329310333129565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122727455062679620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dbbcdda4691f049ad7854ca000a325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
 --- !u!135 &5122727455062679673
 SphereCollider:
   m_ObjectHideFlags: 0
